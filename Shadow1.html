@@ -1,0 +1,413 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shadow - Services & Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: #0d0d0d;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        header {
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #111;
+            border-bottom: 1px solid #222;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        .logo img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+        }
+
+        .logo span {
+            color: #5b7cff;
+        }
+
+        .btn {
+            background: #5b7cff;
+            color: #fff;
+            padding: 12px 28px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #4a6ae6;
+        }
+
+        main {
+            padding: 60px 8%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .intro h2 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .intro p {
+            font-size: 18px;
+            color: #aaa;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .workspace-image {
+            width: 100%;
+            margin: 30px 0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .workspace-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 40px;
+            margin-bottom: 100px;
+        }
+
+        .service-card {
+            background: #111;
+            padding: 40px;
+            border-radius: 8px;
+            border: 1px solid #222;
+        }
+
+        .service-card h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+            color: #5b7cff;
+        }
+
+        .service-card h3 {
+            font-size: 26px;
+            margin-bottom: 12px;
+            color: #5b7cff;
+        }
+
+        .service-card p {
+            color: #aaa;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .service-card ol {
+            list-style: none;
+            padding: 0;
+        }
+
+        .service-card ol li {
+            padding: 8px 0;
+            color: #ccc;
+            font-size: 15px;
+        }
+
+        .tags {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .tags i {
+            background: #1a1a1a;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-style: normal;
+            color: #5b7cff;
+            border: 1px solid #333;
+        }
+
+        .featured-section {
+            margin-bottom: 80px;
+        }
+
+        .featured-section h2 {
+            font-size: 42px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .featured-section > p {
+            text-align: center;
+            color: #aaa;
+            margin-bottom: 60px;
+            font-size: 18px;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 35px;
+            margin-bottom: 50px;
+        }
+
+        .cta-section {
+            text-align: center;
+            margin: 80px 0;
+        }
+
+        footer {
+            background: #111;
+            padding: 60px 8%;
+            border-top: 1px solid #222;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            max-width: 1400px;
+            margin: 0 auto 40px;
+        }
+
+        .footer-section h5 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #5b7cff;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 12px;
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        .footer-section ul li a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-section ul li a:hover {
+            color: #5b7cff;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid #222;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .copyright a {
+            color: #5b7cff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        @media (max-width: 768px) {
+            .services-grid,
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .intro h2 {
+                font-size: 36px;
+            }
+
+            .featured-section h2 {
+                font-size: 32px;
+            }
+
+            main {
+                padding: 40px 5%;
+            }
+
+            .service-card {
+                padding: 30px;
+            }
+
+            header {
+                padding: 15px 5%;
+            }
+
+            footer {
+                padding: 40px 5%;
+            }
+        }
+    </style>
+
+    <header>
+        <div class="logo">
+            <img src="familypro-runway-gen-1766521219385.png" alt="logo">
+            Shadow <span>TheTech</span>
+        </div>
+        <a href="index.html" class="btn">Home</a>
+    </header>
+
+    <main>
+        <div class="intro">
+            <h2>What I Do Best</h2>
+            <p>I specialize in services to elevate your digital presence and brand identity</p>
+            <div class="workspace-image">
+                <img src="1766329086889.png" alt="Workspace">
+            </div>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <h2>Web Development</h2>
+                <p>Custom websites and web applications built with modern technologies. From responsive design to full-stack development, I create digital solutions that perform.</p>
+                <ol>
+                    <li>✓ Responsive & Mobile-first Design</li>
+                    <li>✓ Modern Frameworks & Technologies</li>
+                    <li>✓ SEO Optimization & Fast Loading</li>
+                </ol>
+            </div>
+
+            <div class="service-card">
+                <h2>Logo Design</h2>
+                <p>Memorable brand identities that capture your essence and connect with your audience. From concept to final design, I craft logos that stand the test of time.</p>
+                <ol>
+                    <li>✓ Custom Brand Identity Design</li>
+                    <li>✓ Multiple Concepts & Revisions</li>
+                    <li>✓ Vector Files & Brand Guidelines</li>
+                </ol>
+                <div class="workspace-image">
+                    <img src="LogoImage13745873.png" alt="Logo designs">
+                </div>
+            </div>
+        </div>
+
+        <div class="featured-section">
+            <h2>Featured Work</h2>
+            <p>Some of my recent projects that demonstrate my experience in web development and logo design</p>
+            
+            <div class="workspace-image">
+                <img src="familypro-runway-gen-1766696124736.png" alt="Featured work">
+            </div>
+
+            <div class="projects-grid">
+                <div class="service-card">
+                    <h3>E-commerce Platform</h3>
+                    <p>A full-stack e-commerce solution with modern design, secure payments and admin dashboard.</p>
+                    <div class="tags">
+                        <i>React</i>
+                        <i>Node.js</i>
+                        <i>MongoDB</i>
+                    </div>
+                    <div class="workspace-image">
+                        <img src="familypro-runway-gen-1766696523678.png" alt="E-commerce project">
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <h3>Brand Identity</h3>
+                    <p>Complete brand identity including logo, color palette, typography, and brand guidelines.</p>
+                    <div class="tags">
+                        <i>Logo Design</i>
+                        <i>Branding</i>
+                        <i>Print Design</i>
+                    </div>
+                    <div class="workspace-image">
+                        <img src="familypro-runway-gen-1766520941080.png" alt="Brand identity project">
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <h3>Portfolio Website</h3>
+                    <p>Responsive portfolio website with smooth animations, dark mode, and optimized for better performance.</p>
+                    <div class="tags">
+                        <i>Vue.js</i>
+                        <i>Tailwind CSS</i>
+                        <i>Animation</i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <a href="shadow2.html" class="btn">View Full Portfolio</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h5>Services Offered</h5>
+                <ul>
+                    <li>Web Development</li>
+                    <li>Logo Design</li>
+                    <li>UI/UX Design</li>
+                    <li>Brand Identity</li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h5>Contact Me</h5>
+                <ul>
+                    <li><a href="mailto:shadowthetech@gmail.com">shadowthetech@gmail.com</a></li>
+                    <li>WhatsApp: +234 813 809 4913</li>
+                    <li>Facebook: Abdulsalam Abdulsalam</li>
+                    <li>Phone: +234 813 809 4913</li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h5>Quick Links</h5>
+                <ul>
+                    <li><a href="#schedule">Schedule a Call</a></li>
+                    <li><a href="#quote">Get Quote</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <p>&copy; 2025 Abdulsalam a.k.a Shadow. All rights reserved</p>
+            <div>
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#terms">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
