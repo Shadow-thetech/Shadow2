@@ -1,0 +1,270 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shadow - Web Developer & Designer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: #0d0d0d;
+            background-image: url('familypro-runway-gen-1766696124736.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #fff;
+            line-height: 1.6;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(13, 13, 13, 0.85);
+            z-index: -1;
+        }
+
+        header {
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #111;
+            border-bottom: 1px solid #222;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+        }
+
+        .logo h3 {
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        .logo span {
+            color: #5b7cff;
+        }
+
+        .btn {
+            background: #5b7cff;
+            color: #fff;
+            padding: 12px 28px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        .btn:hover {
+            background: #4a6ae6;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid #5b7cff;
+        }
+
+        .btn-secondary:hover {
+            background: #5b7cff;
+        }
+
+        main {
+            padding: 80px 8%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+
+        .hero h1 span {
+            color: #5b7cff;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #aaa;
+            margin-bottom: 35px;
+            line-height: 1.7;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .image-side {
+            position: relative;
+            padding-right: 60px;
+        }
+
+        .profile-wrap {
+            position: relative;
+            width: 380px;
+            height: 380px;
+        }
+
+        .profile-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid #333;
+        }
+
+
+        .exp-box h3 {
+            font-size: 36px;
+            color: #5b7cff;
+            text-align:right;
+            justify-content:upper right;
+        }
+
+        .exp-box p {
+            font-size: 13px;
+            color: #999;
+            text-align: right;
+            justify-content:upper right;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 8%;
+            background: #111;
+            border-top: 1px solid #222;
+            color: #777;
+            font-size: 14px;
+        }
+
+        footer a {
+            color: #5b7cff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        @media (max-width: 900px) {
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .profile-wrap {
+                width: 300px;
+                height: 300px;
+                margin: 0 auto;
+            }
+
+            .image-side {
+                padding-right: 0;
+            }
+
+            .exp-box {
+                position: static;
+                transform: none;
+                margin: 30px auto 0;
+            }
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 15px 5%;
+            }
+
+            main {
+                padding: 50px 5%;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                text-align: center;
+            }
+        }
+    </style>
+
+    <header>
+        <div class="logo">
+            <img src="familypro-runway-gen-1766521219385.png" alt="Logo">
+            <h3>Shadow <span>TheTech</span></h3>
+        </div>
+        <a href="Shadow1.html" class="btn">Get Started</a>
+    </header>
+
+    <main>
+        <div class="hero">
+            <div>
+                <h1>Hello World,<br><span>I'm Abdulsalam a.k.a Shadow</span></h1>
+                <p>A Web Developer & Logo Designer crafting digital experiences that make an impact for the world. I transform ideas into stunning websites and memorable brand identities, always bringing your vision to life with clean code and creative design.</p>
+                <div class="buttons">
+                    <a href="Shadow1.html" class="btn">Get Started</a>
+                    <a href="shadow2.html" class="btn btn-secondary">View Portfolio</a>
+                </div>
+            </div>
+            <div class="image-side">
+                <div class="profile-wrap">
+                    <img src="IMG-20251221-WA0004.jpg" alt="Shadow Profile">
+                    <aside class="exp-box">
+                        <h3>5+</h3>
+                        <p>Years<br>Experience</p>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Abdulsalam a.k.a Shadow. All rights reserved</p>
+        <div>
+            <a href="#privacy">Privacy Policy</a>
+            <a href="#terms">Terms of Service</a>
+        </div>
+    </footer>
+</body>
+</html>
