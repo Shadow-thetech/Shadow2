@@ -1,0 +1,552 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Shadow - Portfolio & Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: #0d0d0d;
+            background-image: url('familypro-runway-gen-1766696124736.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #fff;
+            line-height: 1.6;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(13, 13, 13, 0.85);
+            z-index: -1;
+        }
+
+        header {
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #111;
+            border-bottom: 1px solid #222;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+        }
+
+        .logo h3 {
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        .logo span {
+            color: #5b7cff;
+        }
+
+        .btn {
+            background: #5b7cff;
+            color: #fff;
+            padding: 12px 28px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background 0.2s;
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background: #4a6ae6;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid #5b7cff;
+        }
+
+        .btn-secondary:hover {
+            background: #5b7cff;
+        }
+
+        main {
+            padding: 80px 8%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .portfolio {
+            margin-bottom: 80px;
+        }
+
+        .portfolio h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+
+        .portfolio h2 {
+            font-size: 38px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            line-height: 1.2;
+        }
+
+        .portfolio h3 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .portfolio h1 span,
+        .portfolio h2 span {
+            color: #5b7cff;
+        }
+
+        .portfolio p {
+            font-size: 18px;
+            color: #aaa;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .portfolio i {
+            display: inline-block;
+            background: #1a1a1a;
+            color: #5b7cff;
+            padding: 10px 20px;
+            margin: 10px 10px 10px 0;
+            border-radius: 6px;
+            font-style: normal;
+            font-weight: 600;
+            border: 1px solid #333;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .testimonial-card {
+            background: #1a1a1a;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #333;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            border-color: #5b7cff;
+        }
+
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid #5b7cff;
+        }
+
+        .testimonial-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .testimonial-info h4 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 3px;
+        }
+
+        .testimonial-info p {
+            font-size: 14px;
+            color: #777;
+            margin: 0;
+        }
+
+        .stars {
+            color: #ffd700;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-card > p {
+            font-size: 16px;
+            color: #bbb;
+            line-height: 1.7;
+        }
+
+        .feq-questions {
+            margin-bottom: 80px;
+        }
+
+        .feq-questions h2 {
+            font-size: 38px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .feq-questions > p {
+            font-size: 18px;
+            color: #aaa;
+            margin-bottom: 40px;
+        }
+
+        details {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+            cursor: pointer;
+            transition: border-color 0.3s;
+        }
+
+        details:hover {
+            border-color: #5b7cff;
+        }
+
+        details[open] {
+            border-color: #5b7cff;
+        }
+
+        summary {
+            font-size: 18px;
+            font-weight: 600;
+            list-style: none;
+            cursor: pointer;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        details p {
+            margin-top: 15px;
+            color: #aaa;
+            line-height: 1.7;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            margin: 40px 0;
+        }
+
+        small {
+            display: block;
+            color: #777;
+            font-size: 14px;
+            margin-top: 15px;
+        }
+
+        footer {
+            background: #111;
+            border-top: 1px solid #222;
+            padding: 60px 8%;
+        }
+
+        .section-foot {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        footer h5 {
+            color: #5b7cff;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        footer h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        footer p {
+            color: #aaa;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer li {
+            color: #aaa;
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+
+        footer a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        footer a:hover {
+            color: #5b7cff;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            color: #777;
+            font-size: 14px;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid #222;
+        }
+
+        @media (max-width: 900px) {
+            .portfolio h1 {
+                font-size: 36px;
+            }
+
+            .portfolio h2 {
+                font-size: 28px;
+            }
+
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-foot {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 15px 5%;
+            }
+
+            main {
+                padding: 50px 5%;
+            }
+
+            footer {
+                padding: 40px 5%;
+            }
+
+            .portfolio h1 {
+                font-size: 28px;
+            }
+
+            .portfolio h2 {
+                font-size: 24px;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                text-align: center;
+            }
+        }
+    </style>
+
+    <header>
+        <div class="logo">
+            <img src="familypro-runway-gen-1766521219385.png" alt="Logo">
+            <h3>Shadow <span>TheTech</span></h3>
+        </div>
+        <a href="index.html" class="btn">Home</a>
+    </header>
+
+    <main>
+        <section class="view-portfolio">
+            <div class="portfolio">
+                <h1>About Abdulsalam <span>a.k.a Shadow</span></h1>
+                <p>I'm a passionate web developer and logo designer who always thrive in digital Shadow. I love solving problems and building technologies daily. My creativity, curiosity, and determination make me stand out among every developer. With years of experience in both web development and logo design, I have bridged the gap between beautiful aesthetics and powerful functionality.</p>
+                <p>
+                   <b>My goal is simple:</b> understand your vision, exceed your expectations, and deliver solutions that not only look amazing but perform flawlessly. Whether you are in need of a stunning website or a memorable logo, I'm here to transform your ideas into digital reality.
+                </p>
+                <i>Web Development</i>
+                <i>Logo Design</i>
+                <i>UI/UX Design</i>
+                <i>Brand Identity</i>
+            </div>
+
+            <div class="portfolio">
+                <h3>What Clients Say</h3>
+                <p>You can't just take my word for it. Here's what some of my amazing clients have to say about the work I did for them.</p>
+                
+                <div class="testimonial-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="testimonial-avatar">
+                                <img src="IMG-20251224-WA0017.jpg" alt="image">
+                            </div>
+                            <div class="testimonial-info">
+                                <h4>Sarah Johnson</h4>
+                                <p>Marketing Director</p>
+                            </div>
+                        </div>
+                        <div class="stars">★★★★★</div>
+                        <p>"Shadow delivered an incredible website that exceeded all our expectations. His attention to detail and creative approach made our brand stand out. Highly recommended!"</p>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="testimonial-avatar">
+                                <img src="familypro-runway-gen-1766656239177.png" alt="Mike Chen">
+                            </div>
+                            <div class="testimonial-info">
+                                <h4>Mike Chen</h4>
+                                <p>Startup Founder</p>
+                            </div>
+                        </div>
+                        <div class="stars">★★★★★</div>
+                        <p>"Working with Shadow was a game-changer for our startup. He created both our logo and website with incredible skill and professionalism. The results speak for themselves!"</p>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="testimonial-avatar">
+                                <img src="familypro-runway-gen-1766656245332.png" alt="Alex Rodriguez">
+                            </div>
+                            <div class="testimonial-info">
+                                <h4>Alex Rodriguez</h4>
+                                <p>E-commerce Owner</p>
+                            </div>
+                        </div>
+                        <div class="stars">★★★★★</div>
+                        <p>"Shadow transformed our online presence completely. Fast delivery, excellent communication, and outstanding results. Our sales increased by 40% after the website launch!"</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feq-questions">
+                <h2>Frequently Asked Questions</h2>
+                <p>Got a question? I've got some answers. Here are the most common questions about working with Shadow.</p>
+                
+                <details>
+                    <summary><b>What services do you offer?</b></summary>
+                    <p>I specialize in web development and logo design. My web development services include custom websites, e-commerce solutions, and responsive design. I also create memorable brand packages.</p>
+                </details>
+
+                <details>
+                    <summary><b>How long does a typical project take?</b></summary>
+                    <p>Project timelines vary depending on complexity. Logo design typically takes 3-7 days, while websites can range from 1-4 weeks. I'll provide you with a detailed timeline during our initial consultation based on your specific requirements.</p>
+                </details>
+
+                <details>
+                    <summary><b>What's your design process look like?</b></summary>
+                    <p>My process starts from understanding your vision and goals. I then create initial concepts, gather your feedback, and refine the design until it's perfect. Throughout the process, I maintain clear communication and provide regular updates on progress.</p>
+                </details>
+
+                <details>
+                    <summary><b>Do you offer revisions?</b></summary>
+                    <p>Absolutely yes! I include up to 3 rounds of revisions in all my packages to ensure you're completely satisfied with the final result. Additional revisions can be accommodated if needed at a reasonable rate.</p>
+                </details>
+
+                <details>
+                    <summary><b>What are your pricing ranges?</b></summary>
+                    <p>Pricing ranges based on project scope and complexity. Logo design starts from $200, while websites typically range from $800-$5,000+. I offer transparent pricing with no hidden fees and can provide a detailed quote after discussing your specific needs.</p>
+                </details>
+
+                <details>
+                    <summary><b>Do you provide ongoing support?</b></summary>
+                    <p>Yes! I provide 30 days of free support after project completion for any technical issues or minor adjustments. I also offer ongoing maintenance packages for websites to keep them updated and secure.</p>
+                </details>
+            </div>
+
+            <div class="portfolio">
+                <h2>Are You Ready to Bring Your Vision to Life?</h2>
+                <p>Let's collaborate on your next web project or logo design. From concept to deployment, I'll help you create something extraordinary that stands out in the digital landscape.</p>
+                
+                <div class="buttons">
+                    <a href="index.html" class="btn btn-secondary">Home</a>
+                    <a href="shadow1.html" class="btn">Get Started</a>
+                </div>
+                
+                <small>Also available for freelance projects. Quick response guaranteed!</small>
+            </div>
+
+            <div class="portfolio">
+                <h2>Shadow TheTech</h2>
+                <p>A professional web developer 😜 and logo designer 😏 creating digital experiences that make an impact.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="section-foot">
+            <div>
+                <h5>Services Offered</h5>
+                <ul>
+                    <li>Web Development</li>
+                    <li>Logo Design</li>
+                    <li>UI/UX Design</li>
+                    <li>Brand Identity</li>
+                </ul>
+            </div>
+            
+            <div>
+                <h5>Contact Me</h5>
+                <ul>
+                    <li><a href="mailto:shadowthetech@gmail.com">shadowthetech@gmail.com</a></li>
+                    <li>WhatsApp: +(234) 813-809-4913</li>
+                    <li>Facebook: Abdulsalam Abdulsalam</li>
+                    <li>Phone: +(234) 813-809-4913</li>
+                </ul>
+            </div>
+            
+            <div>
+                <h2>Shadow TheTech</h2>
+                <p>A professional web developer and logo designer creating digital experiences that make an impact.</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Abdulsalam a.k.a Shadow. All rights reserved.</p>
+            <p>
+                <a href="#privacy">Privacy Policy</a> | 
+                <a href="#terms">Terms of Service</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
